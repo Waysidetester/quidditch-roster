@@ -25,7 +25,7 @@ const getAllPlayersFromDb = () => new Promise((resolve, reject) => {
 
 const getPlayersByTeam = teamId => new Promise((resolve, reject) => {
   axios
-    .get(`${baseUrl}/players.json`)
+    .get(`${baseUrl}/players.json?orderBy="teamId"&equalTo="${teamId}"`)
     .then((result) => {
       const allPlayersObject = result.data;
       const allPlayersArray = [];
@@ -36,8 +36,7 @@ const getPlayersByTeam = teamId => new Promise((resolve, reject) => {
           allPlayersArray.push(newPlayer);
         });
       }
-      const correctPlayers = allPlayersArray.filter(x => x.teamId === teamId);
-      resolve(correctPlayers);
+      resolve(allPlayersArray);
     })
     .catch((err) => {
       reject(err);

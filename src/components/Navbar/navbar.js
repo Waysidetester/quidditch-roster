@@ -8,7 +8,7 @@ const loadNavbar = () => {
       <a href="#" class="brand-logo">Quidditch Roster</a>
       <ul class="nav-links">
         <li class="active">
-          <a>Home</a>
+          <a id="home-link">Home</a>
         </li>
       </ul>
     </nav>

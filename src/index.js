@@ -41,6 +41,7 @@ const initializeApp = () => {
   loadNavbar();
   getAndPrintTeamButtonGroup();
   getAndPrintAllPlayers();
+  $('#home-link').on('click', getAndPrintAllPlayers);
 };
 
 initializeApp();
