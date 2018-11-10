@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import 'bootstrap';
-
+import 'firebase';
 import loadNavbar from './components/Navbar/navbar';
 import dataGetter from './helpers/dataGetter';
 import createTeamButtonGroup from './components/TeamButtonGroup/teamButtonGroup';
@@ -34,6 +34,7 @@ const getAndPrintAllPlayers = () => {
 };
 
 const initializeApp = () => {
+  firebase.initializeApp(config);
   loadNavbar();
   getAndPrintTeamButtonGroup();
   getAndPrintAllPlayers();
